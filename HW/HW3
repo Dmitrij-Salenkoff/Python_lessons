@@ -1,0 +1,72 @@
+#Задачи 66, 68, 74
+# Ex.66
+# February 4, 2013 was the last day that pennies were distributed by the Royal Canadian Mint.
+# Now that pennies have been phased out retailers must adjust totals so that they are multiples of 5 cents
+# when they are paid for with cash (credit card and debit card transactions continue to be charged to the penny).
+# While retailers have some freedom in how they do this, most choose to round to the closest nickel.
+# Write a program that reads prices from the user until a blank line is entered. Display the total cost of
+# all the entered items on one line, followed by the amount due if the customer pays with cash on a second line.
+# The amount due for a cash payment should be rounded to the nearest nickel.
+# One way to compute the cash payment amount is to begin by determining how many pennies would be needed
+# to pay the total. Then compute the remainder when this number of pennies is divided by 5.
+# Finally, adjust the total down if the remainder is less than 2.5. Otherwise adjust the total up.
+
+# pennie = 1
+# pennie_per_nickel = 5
+# nickel = 0.05
+#
+# total = 0.00
+# price = float(input("Enter the total cost of all entered items: "))
+#
+# while price != " ":
+#     total = float(total) + float(price)
+#     price = input("Add item: ")
+#     print("The amount is %.02f" % total)
+#
+# round = total * 100 % pennie_per_nickel
+# if round < pennie_per_nickel / 2:
+#     cash_total = total - round / 100
+# else:
+#     print("The cash amount payable is %.02f" % cash_total)
+
+# Ex. 68
+# sum = 0
+# count = 0
+#
+# mark = input("Введите оценку :")
+# if mark == "A+":
+#      sum = sum + 4.0
+# elif mark == "A":
+#      sum = sum + 4.0
+# elif mark == "A-":
+#      sum = sum + 3.7
+# elif mark == "B+":
+#      sum = sum + 3.3
+# count = count + 1
+#
+# mark = input()
+# while mark != "":
+#      if mark == "A+":
+#           sum = sum + 4.0
+#      elif mark == "A":
+#           sum = sum + 4.0
+#      elif mark == "A-":
+#           sum = sum + 3.7
+#      elif mark == "B+":
+#           sum = sum + 3.3
+#
+#      count = count + 1
+#
+#      mark = input()
+#
+# average = sum / count
+# print(f"Средняя оценка: {average}")
+
+# Ex.74
+# x = float(input())
+# guess = x / 2
+# print(guess)
+# while abs(guess * guess - x) > 1e-12:
+#      average = (guess + x / guess) / 2
+#      guess = average
+#      print(guess)
