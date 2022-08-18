@@ -1,0 +1,48 @@
+# Задачник старый: задачи 86, 88
+# Задачник Абрамяна: For7, For17 (c 20й страницы), Proc20 (с 31й страницы)
+
+# 86
+# In a particular jurisdiction, taxi fares consist of a base fare of $4.00, plus $0.25 for every 140 meters travelled.
+# Write a function that takes the distance travelled (in kilometers) as its only parameter and returns the total fare
+# as its only result. Write a main program that demonstrates the function.
+
+base_fare = 4.00 # основной тариф
+plus_base_fare = 0.25 # добавляется за каждые 140м (0.14км)
+def taxi_fare(distance_km): # вводить будем расстояние в км
+    price_for_plus_base_fare = (distance_km / 140) * 1000 # получается сумма (каждые 140m), на которую надо умножить 0.25
+    total_fare = base_fare + (plus_base_fare * price_for_plus_base_fare)
+    return total_fare
+print(taxi_fare(0.56))
+print(taxi_fare(2.8))
+print(taxi_fare(9.1))
+
+# 88
+# Write a function that takes three numbers as parameters, and returns the median value of those parameters
+# as its result. Include a main program that reads three values from the user and displays their median.
+a = float(input("Input first number: "))
+b = float(input("Input second number: "))
+c = float(input("Input third number: "))
+if a < b and b < c or a > b and b > c:
+    print("Median is", b)
+elif b < a and a < c or b > a and a > c:
+    print("Median is", a)
+elif c < a and b < c or c > a and b > c:
+    print("Median is", c)
+else:
+    print("error")
+
+# For7
+# Даны два целых числа A и B (A < B). Найти сумму всех целых чисел от A до B включительно.
+a = int(input("Введите число: "))
+b = int(input("Введите число: "))
+for i in range (a, b):
+    summ = a + b + i
+    print(summ)
+
+# For 17
+Дано вещественное число A и целое число N (>0). Используя один цикл, найти сумму 1+A+A**2 +A**3 +...+A**N.
+A = float(input("Введите число A: "))
+N = int(input("Введите число N: "))
+for i in range (N):
+    summ = 1 + A + A**i + A**N
+    print(f"Сумма равна: {summ}")
